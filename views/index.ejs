@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypt/Decrypt App</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Encrypt/Decrypt App</h1>
+
+        <div class="form-container">
+            <form action="/encrypt" method="post">
+                <h2>Encrypt Text</h2>
+                <textarea name="text" rows="4" cols="50"></textarea><br>
+                <button type="submit">Encrypt</button>
+            </form>
+
+            <% if (encrypted) { %>
+                <div class="result">
+                    <h3>Encrypted Data</h3>
+                    <p><strong>Encrypted Text:</strong> <%= encrypted %></p>
+                    <form action="/decrypt" method="post">
+                        <input type="hidden" name="encryptedText" value="<%= encrypted %>">
+                        <button type="submit">Decrypt</button>
+                    </form>
+                </div>
+            <% } %>
+
+            <% if (decrypted) { %>
+                <div class="result">
+                    <h3>Decrypted Text</h3>
+                    <p><%= decrypted %></p>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

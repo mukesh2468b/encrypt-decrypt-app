@@ -1,0 +1,5 @@
+type :- node server.js using powershell in project folder
+http://localhost:3000
+ 
+to hide the sensitive information like a encryption key .env in github res.
+send it to the gitignore
